@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+    </script>
+    <title>Weblab№1</title>
+</head>
+<body>
+<div id="gridContainer">
+    <div id="header">
+        <div id="header-title">
+            Лабораторная работа №1 по Веб-программированию, Вариант: 409319<br>
+        </div>
+        <div id="header-bio">
+            Выполнил работу: Пашов Илья Александрович, P3230
+        </div>
+    </div>
+
+    <div id="maintable">
+        <div id="input-block">
+            <p id="x">
+                Выберите координату X
+            </p>
+            <div id="x-input">
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="-3" id="radio-1">
+                    <label for="radio-1">-3</label>
+                </div>
+
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="-2" id="radio-2">
+                    <label for="radio-2">-2</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="-1" id="radio-3">
+                    <label for="radio-3">-1</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="0" id="radio-4">
+                    <label for="radio-4">0</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="1" id="radio-5">
+                    <label for="radio-5">1</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="2" id="radio-6">
+                    <label for="radio-6">2</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="3" id="radio-7">
+                    <label for="radio-7">3</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="4" id="radio-8">
+                    <label for="radio-8">4</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" name="x-choose" class="radio-x" value="5" id="radio-9">
+                    <label for="radio-9">5</label>
+                </div>
+            </div>
+
+            <label id="y" for="y-input">
+                Выберите координату Y
+            </label>
+            <input type="text" name="y-choose" class="text-y" id="y-input" placeholder="Введите координату Y (-3; 5)" >
+            
+            <p id="r">
+                Выберите радиус R
+            </p>
+            <div id="r-input">        
+                <div class="checkbox">
+                    <input type="checkbox" name="r-choose" class="checkbox-r" value="1" id="checkbox-1">
+                    <label for="checkbox-1">1</label>
+                </div>
+                
+                <div class="checkbox">
+                    <input type="checkbox" name="r-choose" class="checkbox-r" value="2" id="checkbox-2">
+                    <label for="checkbox-2">2</label>
+                </div>
+                
+                <div class="checkbox">
+                    <input type="checkbox" name="r-choose" class="checkbox-r" value="3" id="checkbox-3">
+                    <label for="checkbox-3">3</label>
+                </div>
+                
+                <div class="checkbox">
+                    <input type="checkbox" name="r-choose" class="checkbox-r" value="4" id="checkbox-4">
+                    <label for="checkbox-4">4</label>
+                </div>
+                
+                <div class="checkbox">
+                    <input type="checkbox" name="r-choose" class="checkbox-r" value="5" id="checkbox-5">
+                    <label for="checkbox-5">5</label>
+                </div>
+            </div>
+
+            <input type="submit" id="submit" value="Отправить" onclick="sendAjax()">
+            <div class="error_text"  style="display: none;">Ошибка ввода данных</div>
+        </div>
+        <div id="graph">
+            <div id="frame">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div id="datatable">
+        <div class="gui" id="data-block">
+            <table id="results">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Точка входит в ОДЗ</th>
+                        <th>Время запроса</th>
+                        <th>Время выполнения, мкс</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="footer">        
+        <div>
+            <a href="https://itmo.ru/">
+                <img src="img/itmo-logo.png" 
+                alt="Логотип ИТМО"
+                title="Перейти на сайт ИТМО"> 
+            </a>
+        </div>
+        <div><p>2024 &copy; Университет ИТМО</p></div>
+    </div>
+
+</div>
+
+<script src="script/validate.js"></script>
+<script src="script/drawFigure.js"></script>
+<script src="script/ajax.js"></script>
+
+</body>
+</html>

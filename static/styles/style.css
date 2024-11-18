@@ -1,0 +1,267 @@
+/* Сброс общих стилей */
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* Базовые настройки для страницы */
+body, html {
+    height: 100%;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: linear-gradient(to right bottom, #3a1c71, #d76d77, #ffaf7b);
+    color: #000;
+    background-attachment: fixed;
+}
+
+#gridContainer {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto auto;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для заголовка */
+#header {
+    display: grid;
+    background-color: #4a4e69;
+    padding: 15px;
+    border-radius: 8px;
+    justify-items: center;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: inherit;
+    font-family: cursive, monospace;
+    transition: transform 0.3s;
+}
+
+#header:hover {
+    transform: scale(1.01);
+}
+
+#header-title {
+    font-weight: bold;
+}
+
+#header-bio {
+    justify-self: start;
+}
+
+/* Основной контент */
+#maintable {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Блок ввода */
+#input-block {
+    background-color: #f2e9e4;
+    padding: 2.5%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    color: #4a4e69;
+}
+
+#input-block:hover {
+    transform: scale(1.02);
+}
+
+#input-block p, #input-block label {
+    margin: 1% 0;
+}
+
+.radio {
+    display: inline-block;
+    margin: 2% 1%;
+}
+
+.radio input {
+    display: none;
+}
+
+.radio label {
+    cursor: pointer;
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: #4a4e69;
+    color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.radio label:hover {
+    background-color: #9a8c98;
+    transform: scale(1.05);
+}
+
+.radio input:checked + label {
+    background-color: #9a8c98;
+}
+
+.checkbox {
+    display: inline-block;
+    margin: 3% 2%;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.checkbox label {
+    cursor: pointer;
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: #4a4e69;
+    color: #fff;
+    border-radius: 15%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.checkbox label:hover {
+    background-color: #9a8c98;
+    transform: scale(1.05);
+}
+
+.checkbox input:checked + label {
+    background-color: #9a8c98;
+}
+
+#y-input {
+    width: 95%;
+    padding: 1.5%;
+    margin: 2% 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+    font-size: 20px;
+}
+
+#y-input::placeholder {
+    font-style: italic;
+}
+
+#y-input:focus {
+    border-color: #4a4e69;
+    outline: none;
+}
+
+#y-input.error {
+    border-color: red; /* Цвет рамки при ошибке */
+}
+
+#submit {
+    height: auto;
+    width: 100%;
+    padding: 5%;
+    margin: 2% 0;
+    background-color: #4a4e69;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#submit:hover:not(:disabled) {
+    background-color: #9a8c98;
+    transform: scale(1.025);
+}
+
+#submit:hover:disabled {
+    background-color: rgb(207, 62, 4);
+}
+
+/* График */
+#graph {
+    background-color: #f2e9e4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+#graph:hover {
+    transform: scale(1.02);
+}
+
+#frame {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid #4a4e69;
+    width: 100%;
+    height: 100%;
+}
+
+/* Таблица данных */
+#datatable {
+    display: grid;
+    margin-top: 20px;
+}
+
+
+#data-block {
+    background-color: #f2e9e4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+#data-block:hover {
+    transform: scale(1.01);
+}
+
+#results {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#results thead {
+    background-color: #4a4e69;
+    color: #fff;
+}
+
+#results th, #results td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#results tbody tr:nth-child(even) {
+    background-color: #ececec;
+}
+
+/* Нижний колонтитул */
+#footer {
+    display: grid;
+    justify-items: center;
+    padding: 10px;
+    background-color: #4a4e69;
+    color: #fff;
+    border-radius: 8px;
+    font-family: cursive;
+    box-shadow: inherit;
+    transition: transform 0.3s;
+}
+
+#footer:hover {
+    transform: scale(1.01);
+}
+
+#footer img {
+    width: 150px;
+    height: auto;
+}
