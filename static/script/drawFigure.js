@@ -1,5 +1,5 @@
 const canvas = document.getElementById("canvas");
-let frame = document.getElementById("frame")
+const frame = document.getElementById("frame");
 canvas.width = frame.offsetWidth;
 canvas.height = frame.offsetHeight;
 
