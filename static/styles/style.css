@@ -19,7 +19,7 @@ body, html {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto auto;
     gap: 20px;
-    padding: 20px;
+    padding: 1.1%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -27,13 +27,13 @@ body, html {
 #header {
     display: grid;
     background-color: #4a4e69;
-    padding: 15px;
+    padding: 0.8%;
     border-radius: 8px;
     justify-items: center;
     color: #fff;
     font-size: 18px;
     box-shadow: inherit;
-    font-family: cursive, monospace;
+    font-family: serif, monospace;
     transition: transform 0.3s;
 }
 
@@ -78,7 +78,7 @@ body, html {
 
 .radio {
     display: inline-block;
-    margin: 2% 1%;
+    margin: 2% 5%;
 }
 
 .radio input {
@@ -109,7 +109,7 @@ body, html {
 
 .checkbox {
     display: inline-block;
-    margin: 3% 2%;
+    margin: 2.5% 1.125%;
 }
 
 .checkbox input {
@@ -186,7 +186,7 @@ body, html {
 /* График */
 #graph {
     background-color: #f2e9e4;
-    padding: 20px;
+    padding: 1%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
@@ -214,7 +214,7 @@ body, html {
 
 #data-block {
     background-color: #f2e9e4;
-    padding: 20px;
+    padding: 1%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
@@ -248,11 +248,11 @@ body, html {
 #footer {
     display: grid;
     justify-items: center;
-    padding: 10px;
+    padding: 1%;
     background-color: #4a4e69;
     color: #fff;
     border-radius: 8px;
-    font-family: cursive;
+    font-family: serif;
     box-shadow: inherit;
     transition: transform 0.3s;
 }

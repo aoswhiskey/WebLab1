@@ -4,8 +4,8 @@ const submitButton = document.getElementById('submit');
 // Функция для валидации вводимых символов
 function validateYInput() {
     const yValue = parseFloat(yInput.value);
-    // Проверяем, находится ли значение в диапазоне от -3 до 5
-    if (yValue <= -3 || yValue >= 5) {
+    // Проверяем, находится ли значение в диапазоне от -5 до 5
+    if (yValue <= -5 || yValue >= 5) {
         yInput.classList.add('error');
         submitButton.disabled = true;
     } else {
