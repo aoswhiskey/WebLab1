@@ -1,8 +1,5 @@
 package utility;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.HashMap;
@@ -10,47 +7,71 @@ import exceptions.ValidationException;
 
 public class Validator {
 
-    private static final Gson gson = new Gson();
-    public static HashMap<String, Number> validate(String JSONRequest) throws ValidationException {
+    public static HashMap<String, Number> validateGetRequest(String queryString) throws ValidationException {
+        if (queryString == null || queryString.isEmpty()) {
+            throw new ValidationException("Отсутствуют параметры запроса");
+        }
+        
+        HashMap<String, Number> params = parseQueryString(queryString);
+        
+        if (params.size() != 3) {
+            throw new ValidationException("Incorrect argument's count");
+        }
+        
+        if (!(params.containsKey("x") && params.containsKey("y") && params.containsKey("r"))) {
+            throw new ValidationException("Incorrect arguments");
+        }
+        
+        params.put("y", new BigDecimal(String.valueOf(params.get("y")))
+            .setScale(10, RoundingMode.DOWN).doubleValue());
+
+        if (!isNumberInRange(params.get("x"), -2, 2)) {
+            throw new ValidationException("'x' argument must be a multiple of 0.5 in range [-2, 2]");
+        }
+
+        if (!isNumberInRange(params.get("r"), 1, 3)) {
+            throw new ValidationException("'r' argument must be a multiple of 0.5 in range [1, 3]");
+        }
+
+        if ((params.get("y").doubleValue() <= -5) || (params.get("y").doubleValue() >= 5)) {
+            throw new ValidationException("'y' argument must be a double in range (-5, 5)");
+        }
+
+        return params;
+    }
+    
+    private static HashMap<String, Number> parseQueryString(String queryString) throws ValidationException {
+        HashMap<String, Number> params = new HashMap<>();
+        
         try {
-            HashMap<String, Number> map = gson.fromJson(JSONRequest, new TypeToken<HashMap<String, Number>>() {
-            }.getType());
-            map.put("y", new BigDecimal(String.valueOf(map.get("y"))).setScale(10, RoundingMode.DOWN).doubleValue());
-
-            if (map.size() != 3) {
-                throw new ValidationException("Incorrect argument's count");
+            String[] pairs = queryString.split("&");
+            for (String pair : pairs) {
+                String[] keyValue = pair.split("=");
+                if (keyValue.length == 2) {
+                    String key = keyValue[0];
+                    String value = keyValue[1];
+                    
+                    double numericValue = Double.parseDouble(value);
+                    params.put(key, numericValue);
+                }
             }
-            if (!(map.containsKey("x") && map.containsKey("y") && map.containsKey("r"))) {
-                throw new ValidationException("Incorrect arguments");
-            }
-            if (!isIntegerInRange(map.get("x"), -3, 5)) {
-                throw new ValidationException("'x' argument must be an integer in range [-5, 3]");
-            }
-
-            if (!isIntegerInRange(map.get("r"), 1, 5)) {
-                throw new ValidationException("'r' argument must be an integer in range [1, 5]");
-            }
-
-            if ((map.get("y").doubleValue() < -3) || (map.get("y").doubleValue() > 5)) {
-                throw new ValidationException("'y' argument must be a double in range (-3, 3)");
-            }
-
-            return map;
-        } catch (ValidationException e){
-            throw e;
-        } catch (Exception e){
-            throw new ValidationException("Incorrect argument's values");
+            
+            return params;
+            
+        } catch (NumberFormatException e) {
+            throw new ValidationException("Неверный формат числового параметра");
+        } catch (Exception e) {
+            throw new ValidationException("Ошибка парсинга параметров: " + e.getMessage());
         }
     }
 
-    public static boolean isIntegerInRange(Number number, int min, int max) {
-        // Checking if a number is an integer
-        if (number.doubleValue() % 1 != 0) {
-            return false; // Не целое число
+    public static boolean isNumberInRange(Number number, int min, int max) {
+        double value = number.doubleValue();
+        
+        if (Math.abs(value % 0.5) > 1e-10) {
+            return false;
         }
-
-        // Cast the number to int and check the range
-        int intNumber = number.intValue();
-        return intNumber >= min && intNumber <= max;
+        
+        return value >= min && value <= max;
     }
 }
