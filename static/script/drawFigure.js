@@ -7,18 +7,18 @@ const ctx = canvas.getContext("2d");
 
 // Прямоугольник
 ctx.fillStyle = "#4a4e69";
-ctx.fillRect(canvas.width/2 - canvas.height/6, canvas.height/6, canvas.height/6, canvas.height/3);
+ctx.fillRect(canvas.width/2 - canvas.height/3, canvas.height/2, canvas.height/3, canvas.height/6);
 
 // Окружность
 ctx.moveTo(canvas.width/2, canvas.height/2);
 ctx.lineTo(canvas.width/2, canvas.height/2 + canvas.height/3);
 ctx.moveTo(canvas.width/2, canvas.height/2);
-ctx.lineTo(canvas.width/2-(canvas.height/3), canvas.height/2);
-ctx.arc(canvas.width/2, canvas.height/2, canvas.height/3, Math.PI, 0.5*Math.PI, true);
+ctx.lineTo(canvas.width/2 + (canvas.height/3), canvas.height/2);
+ctx.arc(canvas.width/2, canvas.height/2, canvas.height/3, 0*Math.PI, 0.5*Math.PI, false);
 ctx.fill();
 
 // Треугольник
-ctx.moveTo(canvas.width/2 + canvas.height/6 ,canvas.height/2);
+ctx.moveTo(canvas.width/2 + canvas.height/3,canvas.height/2);
 ctx.lineTo(canvas.width/2, canvas.height/2);
 ctx.lineTo(canvas.width/2, canvas.height/3);
 ctx.fill();
@@ -29,17 +29,17 @@ ctx.fillStyle = "#000";
 ctx.moveTo(canvas.width/2, 0);
 ctx.lineTo(canvas.width/2, canvas.height);
 ctx.moveTo(0, canvas.height/2);
-ctx.lineTo(canvas.width, canvas.height/2);
+ctx.lineTo(canvas.width - 10, canvas.height/2);
 
 ctx.moveTo(canvas.width/2, 0);
 ctx.lineTo(canvas.width/2+10, 15);
 ctx.moveTo(canvas.width/2, 0);
 ctx.lineTo(canvas.width/2-10, 15);
 
-ctx.moveTo(canvas.width, canvas.height/2);
-ctx.lineTo(canvas.width-15, canvas.height/2+10);
-ctx.moveTo(canvas.width, canvas.height/2);
-ctx.lineTo(canvas.width-15, canvas.height/2-10);
+ctx.moveTo(canvas.width - 10, canvas.height/2);
+ctx.lineTo(canvas.width - 25, canvas.height/2 + 10);
+ctx.moveTo(canvas.width - 10, canvas.height/2);
+ctx.lineTo(canvas.width - 25, canvas.height/2 - 10);
 
 
 // Черточки на координатной прямой

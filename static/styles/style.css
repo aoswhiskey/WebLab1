@@ -77,7 +77,7 @@ body, html {
 }
 
 .radio {
-    display: inline-block;
+    display: inline-grid;
     margin: 2% 5%;
 }
 
@@ -108,7 +108,7 @@ body, html {
 }
 
 .checkbox {
-    display: inline-block;
+    display: inline-grid;
     margin: 2.5% 1.125%;
 }
 
@@ -183,6 +183,10 @@ body, html {
     background-color: rgb(207, 62, 4);
 }
 
+div[class="error_text"] {
+    color: red;
+}
+
 /* График */
 #graph {
     background-color: #f2e9e4;
@@ -242,6 +246,10 @@ body, html {
 
 #results tbody tr:nth-child(even) {
     background-color: #ececec;
+}
+
+#results > thead > tr {
+    font-size: large;
 }
 
 /* Нижний колонтитул */
