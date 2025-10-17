@@ -3,54 +3,44 @@ function sendAjax() {
     const yValue = truncateNumber(document.getElementById("y-input").value, 10);
     const rValue = document.querySelector('input[name="r-choose"]:checked').value;
 
-    // Регулярные выражения для проверки значений
     const xRegExp = /^(-2|-1.5|-1|-0.5|0|0.5|1|1.5|2)$/;
     const yRegExp = /^(-?[0-4](\.\d+)?)$/;
     const rRegExp = /^(1|1.5|2|2.5|3)$/;
 
-    // Проверяем, выбран ли X
     if (selectedXOptions.length === 0) {
         showError();
         return;
     }
 
-    selectedXOptions.forEach(function (option) {
+    selectedXOptions.forEach(function(option) {
         let xValue = option.value;
 
-        // Проверка значений X, Y, R
         if (xRegExp.test(xValue) && yRegExp.test(yValue) && rRegExp.test(rValue)) {
             hideError();
-            // AJAX-запрос
-            fetch("http://localhost:8080/calculate", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    x: parseInt(xValue),
-                    y: parseFloat(yValue),
-                    r: parseInt(rValue)
+
+            // Формируем GET URL с параметрами
+            const url = `http://localhost:8080/calculate?x=${encodeURIComponent(xValue)}&y=${encodeURIComponent(yValue)}&r=${encodeURIComponent(rValue)}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(function(data) {
+                    let result = data["result"] ? "Попадание" : "Промах";
+                    let time = data["time"];
+
+                    let newRow = 
+                        `<tr>
+                            <td>${xValue}</td>
+                            <td>${parseFloat(yValue)}</td>
+                            <td>${rValue}</td>
+                            <td>${result}</td>
+                            <td>${getCurrentDatetime()}</td>
+                            <td>${time}</td>
+                        </tr>`;
+                    
+                    document.querySelector("#results tbody").insertAdjacentHTML('beforeend', newRow);
                 })
-            })
-            .then(response => response.json())
-            .then(function(data) {
-                let result = data["result"] ? "Попадание" : "Промах";
-                let time = data["time"];
-            
-                let newRow = 
-                    `<tr>
-                        <td>${xValue}</td>
-                        <td>${parseFloat(yValue)}</td>
-                        <td>${rValue}</td>
-                        <td>${result}</td>
-                        <td>${getCurrentDatetime()}</td>
-                        <td>${time}</td>
-                    </tr>`
-                ;
-            
-                document.querySelector("#results tbody").insertAdjacentHTML('beforeend', newRow);
-            })
-            .catch(handleError);
+                .catch(handleError);
+
         } else {
             showError();
         }
