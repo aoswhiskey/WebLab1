@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="web:jar" />
+      <artifact name="app:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -11,11 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6ff5e339-6bb5-4c51-8517-b4e30860ef05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/Checker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/HTTPHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/HTTPHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/script/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/script/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/app_jar/lab1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_jar/web.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +100,7 @@
       <workItem from="1731944866402" duration="1191000" />
       <workItem from="1731947304660" duration="7824000" />
       <workItem from="1731961243207" duration="720000" />
-      <workItem from="1760719561756" duration="545000" />
+      <workItem from="1760719561756" duration="2466000" />
     </task>
     <servers />
   </component>

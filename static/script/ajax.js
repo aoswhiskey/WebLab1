@@ -19,7 +19,7 @@ function sendAjax() {
             hideError();
 
             // Формируем GET URL с параметрами
-            const url = `http://localhost:8080/calculate?x=${encodeURIComponent(xValue)}&y=${encodeURIComponent(yValue)}&r=${encodeURIComponent(rValue)}`;
+            const url = `/calculate?x=${encodeURIComponent(xValue)}&y=${encodeURIComponent(yValue)}&r=${encodeURIComponent(rValue)}`;
 
             fetch(url)
                 .then(response => response.json())
