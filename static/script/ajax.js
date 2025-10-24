@@ -38,6 +38,8 @@ function sendAjax() {
                         </tr>`;
                     
                     document.querySelector("#results tbody").insertAdjacentHTML('beforeend', newRow);
+                    
+                    drawPoint(xValue, yValue, rValue, data["result"]);
                 })
                 .catch(handleError);
 

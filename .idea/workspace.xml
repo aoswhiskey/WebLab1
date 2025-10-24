@@ -11,8 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6ff5e339-6bb5-4c51-8517-b4e30860ef05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/app_jar/lab1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_jar/web.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/app_jar/web.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/app_jar/web.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utility/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/Checker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/script/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/script/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/script/drawFigure.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/script/drawFigure.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +50,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/ITMO/3/5/web",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ITMO/3/5/web&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\OneDrive\Рабочий стол\ИТМО\2 курс\Веб\lab1\Лаба\lab1\libs" />
@@ -101,6 +104,7 @@
       <workItem from="1731947304660" duration="7824000" />
       <workItem from="1731961243207" duration="720000" />
       <workItem from="1760719561756" duration="2466000" />
+      <workItem from="1761309402892" duration="3740000" />
     </task>
     <servers />
   </component>

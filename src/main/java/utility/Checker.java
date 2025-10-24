@@ -3,7 +3,7 @@ package utility;
 public class Checker {
     public static boolean checkParams(double x, double y, double r) {
         boolean isInFirstQuarter = (y >= 0) && (x >= 0);
-        boolean isInSecondQuarter = (y >= 0) && (x <= 0);
+        boolean isInSecondQuarter = (y > 0) && (x < 0);
         boolean isInThirdQuarter = (y <= 0) && (x <= 0);
         boolean isInFourthQuarter = (y <= 0) && (x >= 0);
 
