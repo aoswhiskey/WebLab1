@@ -3,9 +3,9 @@ function sendAjax() {
     const yValue = truncateNumber(document.getElementById("y-input").value, 10);
     const rValue = document.querySelector('input[name="r-choose"]:checked').value;
 
-    const xRegExp = /^(-2|-1.5|-1|-0.5|0|0.5|1|1.5|2)$/;
+    const xRegExp = /^(-2|-1\.5|-1|-0\.5|0|0\.5|1|1\.5|2)$/;
     const yRegExp = /^(-?[0-4](\.\d+)?)$/;
-    const rRegExp = /^(1|1.5|2|2.5|3)$/;
+    const rRegExp = /^(1|1\.5|2|2\.5|3)$/;
 
     if (selectedXOptions.length === 0) {
         showError();
@@ -18,10 +18,10 @@ function sendAjax() {
         if (xRegExp.test(xValue) && yRegExp.test(yValue) && rRegExp.test(rValue)) {
             hideError();
 
-            // Формируем GET URL с параметрами
+            // Формируем URL с параметрами
             const url = `/calculate?x=${encodeURIComponent(xValue)}&y=${encodeURIComponent(yValue)}&r=${encodeURIComponent(rValue)}`;
 
-            fetch(url)
+            fetch(url, {method: "POST"})
                 .then(response => response.json())
                 .then(function(data) {
                     let result = data["result"] ? "Попадание" : "Промах";

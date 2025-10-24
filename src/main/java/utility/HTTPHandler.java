@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class HTTPHandler {
     private static final String serverHost = "/calculate";
-    private static final String HTTPMethod = "GET";
+    private static final String HTTPMethod = "POST";
 
     private static final String HTTP_Response = """
         Content-Type: application/json
@@ -34,7 +34,7 @@ public class HTTPHandler {
         String requestURI = FCGIInterface.request.params.getProperty("REQUEST_URI");
 
         if (!HTTPMethod.equals(requestMethod)) {
-            throw new RequestException("Неверный метод запроса. Разрешен только GET");
+            throw new RequestException("Неверный метод запроса. Разрешен только POST");
         }
 
         if (!requestURI.startsWith(serverHost)) {
